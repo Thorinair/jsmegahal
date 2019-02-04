@@ -35,9 +35,10 @@
     */
 
 
-    function jsMegaHal(markov, defaultReply) {
+    function jsMegaHal(markov, defaultReply, maxLoop) {
       this.markov = markov != null ? markov : 4;
       this.defaultReply = defaultReply != null ? defaultReply : '';
+      this.maxLoop = maxLoop != null ? maxLoop : 100;
       this.words = Object.create(null);
       this.quads = {};
       this.next = {};
@@ -160,7 +161,7 @@
 
 
     jsMegaHal.prototype.getReply = function(word) {
-      var middleQuad, newQuad, nextToken, nextTokens, parts, prevToken, prevTokens, quad, quadHash, quads;
+      var middleQuad, newQuad, nextToken, nextTokens, parts, prevToken, prevTokens, quad, quadHash, quads, counter;
       word = word != null ? word.trim() : void 0;
       quads = [];
       if (word && (word in this.words)) {
@@ -177,7 +178,9 @@
       }
       quad = middleQuad = this.quads[quadHash];
       parts = quad.tokens.slice(0);
-      while (!quad.canEnd) {
+      counter = 0;
+      while (!quad.canEnd && counter < this.maxLoop) {
+      	counter++;
         nextTokens = this.next[quad.hash()];
         if (!nextTokens) {
           break;
@@ -189,7 +192,9 @@
         parts.push(nextToken);
       }
       quad = middleQuad;
-      while (!quad.canStart) {
+      counter = 0;
+      while (!quad.canStart && counter < this.maxLoop) {
+      	counter++;
         prevTokens = this.prev[quad.hash()];
         if (!prevTokens) {
           break;

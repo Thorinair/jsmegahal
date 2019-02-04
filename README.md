@@ -14,19 +14,21 @@ Sample Usage
 ```js
 jsmegahal = require('jsmegahal');
 
-//you can pass in the markov order you want to use. it defaults to 4.
-var megahal = new jsmegahal(4);
+// The first parameter lets you set the markov order you want to use. Defaults to 4.
+// The second parameter lets you set the default reply when there is no data. Defaults to "".
+// The third parameter lets you set the maximum number of loops. Defaults to 100.
+var megahal = new jsmegahal(4, "I am jsmegahal.", 100);
 
-//add a single sentence
+// Add a single sentence.
 megahal.add("This is a singular sentence and megahal will deconstruct it accordingly.");
 
-//add a lot of data
+// Add a lot of data.
 megahal.addMass("This is a lot of data. Also, it is in multiple sentences!");
 
-//get a string based on the markov data -- this picks a random token in the sentence
+// Get a string based on the markov data -- this picks a random token in the sentence.
 console.log(megahal.getReplyFromSentence("Pick a keyword"));
 
-//get a string based on the markob data -- this can take a token, or nothing at all
+// Get a string based on the markob data -- this can take a token, or nothing at all.
 console.log(megahal.getReply());
 ```
 
