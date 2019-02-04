@@ -1,4 +1,4 @@
-jsmegahal [![Build Status](https://travis-ci.org/seiyria/jsmegahal.png?branch=master)](https://travis-ci.org/seiyria/jsmegahal)
+jsmegahal
 =========
 
 Implementation of the MegaHAL AI in JS for consumption with node.js
@@ -6,7 +6,7 @@ Implementation of the MegaHAL AI in JS for consumption with node.js
 Installation
 ============
 ```
-npm install jsmegahal
+npm install github:Thorinair/jsmegahal
 ```
 
 Sample Usage
@@ -33,3 +33,4 @@ console.log(megahal.getReply());
 Projects Using This
 ===================
 [alexa-chatterbot](https://github.com/moof2k/alexa-chatterbot)
+[Princess-Luna](https://github.com/Thorinair/Princess-Luna)

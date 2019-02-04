@@ -1,1 +1,1 @@
-module.exports = require("./dist/jsmegahal.js");
+module.exports = require("./jsmegahal.js");
