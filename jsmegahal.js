@@ -26,7 +26,7 @@
 
 
   jsMegaHal = (function() {
-    jsMegaHal.prototype.wordRegex = /[^a-zA-Zа-яА-Я0-9:,'\u00C0-\u017F]+/;
+    jsMegaHal.prototype.wordRegex = /[^a-zA-Zа-яА-Я0-9:;()><,'\u00C0-\u017F]+/;
 
     jsMegaHal.prototype.sentenceRegex = /[!?\.\n]/;
 
