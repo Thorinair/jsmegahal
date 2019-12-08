@@ -1,6 +1,6 @@
 {
   "name": "jsmegahal",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A port of the MegaHal AI to JS",
   "main": "index.js",
   "repository": {
